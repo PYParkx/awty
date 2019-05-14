@@ -9,7 +9,7 @@ class Notification: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         val message = intent!!.getStringExtra("message")
         val phoneNumber = intent!!.getStringExtra("phoneNumber")
-        val number = "(" + phoneNumber.substring(0, 3) + ") " + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6)
+        val number = "Texting (" + phoneNumber.substring(0, 3) + ") " + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6)
         val msg = number + "\n" + message
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
     }
