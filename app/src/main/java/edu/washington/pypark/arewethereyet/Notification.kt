@@ -10,6 +10,7 @@ class Notification: BroadcastReceiver() {
         val message = intent!!.getStringExtra("message")
         val phoneNumber = intent!!.getStringExtra("phoneNumber")
         val number = "(" + phoneNumber.substring(0, 3) + ") " + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6)
-        Toast.makeText(context, number + ": \n"  + message, Toast.LENGTH_LONG).show()
+        val msg = number + "\n" + message
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
     }
 }
